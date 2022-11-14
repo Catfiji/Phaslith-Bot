@@ -1,2 +1,2 @@
 PREFIX = '!'
-TOKEN=''
+TOKEN='' # add token here
