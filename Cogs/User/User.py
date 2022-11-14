@@ -19,6 +19,11 @@ class User(commands.Cog):
         else:
             await ctx.send("**You already exist in the database!**")
 
+    @commands.command(name="profile")
+    @commands.has_role("Player")
+    async def profile(self, ctx):
+        # TODO:
+        await ctx.send("profile")
 
 #;---------------------------------------------------------------------------
 async def setup(client):
