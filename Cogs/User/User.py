@@ -1,7 +1,9 @@
+import asyncio
+
 from discord.ext import commands
 import discord
 from Cogs.User.SetupFunctions import setup_player
-
+from Cogs.Currency.CurrencyFunctions.currency_functions import get_user_wallet, get_user_bank
 #;---------------------------------------------------------------------------
 
 class User(commands.Cog):
@@ -21,9 +23,21 @@ class User(commands.Cog):
 
     @commands.command(name="profile")
     @commands.has_role("Player")
-    async def profile(self, ctx):
+    async def profile(self, ctx, member: discord.Member = None):
         # TODO:
-        await ctx.send("profile")
+        if member == None:
+            member = ctx.author
+        name = member.display_name
+        avatar = member.display_avatar
+
+        profile_embed = discord.Embed(title=f"{name}'s profile", description="",
+                                      color=discord.Color.random())
+        profile_embed.add_field(name="Balance", value=f"${get_user_wallet(ctx.author.id)}", inline=True)
+        profile_embed.add_field(name="Bank", value=f"${get_user_bank(ctx.author.id)}", inline=True)
+
+        await ctx.send(embed=profile_embed, delete_after=10.0)
+        await asyncio.sleep(5.0)
+        await ctx.message.delete()
 
 #;---------------------------------------------------------------------------
 async def setup(client):
