@@ -9,7 +9,13 @@ client = commands.Bot(command_prefix=config.PREFIX, intents=discord.Intents.all(
 #;- load cogs
 async def load_cogs():
     cogs_loaded = 0 # Slice of Life
-    cogs = ["Cogs.Utilities.Utilities", "Cogs.Admin.Admin", "Cogs.User.User", "Cogs.Currency.Currency", "Cogs.Events.Events"]
+    cogs = [
+        "Cogs.Utilities.Utilities",
+        "Cogs.Admin.Admin",
+        "Cogs.User.User",
+        "Cogs.Currency.Currency",
+        "Cogs.Events.Events"
+    ]
     for i in cogs:
         try:
             await client.load_extension(i) # load each cog in cogs list
