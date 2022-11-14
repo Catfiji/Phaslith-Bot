@@ -5,7 +5,8 @@ from discord.ext import commands
 
 client = commands.Bot(command_prefix=config.PREFIX, intents=discord.Intents.all(), help_command=None)
 #;---------------------------------------------------------------------------
-# hi
+
+#;- load cogs
 async def load_cogs():
     cogs_loaded = 0 # Slice of Life
     cogs = ["Cogs.Utilities.Utilities", "Cogs.Admin.Admin", "Cogs.User.User", "Cogs.Currency.Currency"]
@@ -18,6 +19,7 @@ async def load_cogs():
 
     print(f"I have loaded {cogs_loaded} cog/s")
 
+#;- main
 async def main():
     await load_cogs()
     await client.start(config.TOKEN)
