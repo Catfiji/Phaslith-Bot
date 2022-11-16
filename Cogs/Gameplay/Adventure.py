@@ -16,14 +16,13 @@ class Adventure(commands.Cog):
     @commands.command(aliases=["walk", "adventure"])
     @commands.has_role("Player")
     async def step(self, ctx):
-        user_id = ctx.author.id
-        avatar = ctx.author.display_avatar
-        location_info = get_location_information(get_user_location_id(user_id))
-        gold = random.randint(location_info[3], location_info[4])
-        exp = random.randint(location_info[5], location_info[6])
-        add_wallet_bal(user_id, gold)
-        add_exp(user_id, exp)
         try:
+            user_id = ctx.author.id
+            location_info = get_location_information(get_user_location_id(user_id))
+            gold = random.randint(location_info[3], location_info[4])
+            exp = random.randint(location_info[5], location_info[6])
+            add_wallet_bal(user_id, gold)
+            add_exp(user_id, exp)
             step_embed = discord.Embed(title=f"[debug] Adventure", description="You take a step forward",color=discord.Color.random())
             step_embed.add_field(name="Rewards", value=f"+${gold}\n+{exp}xp", inline=True)
             await ctx.reply(embed=step_embed, delete_after=3.0)
