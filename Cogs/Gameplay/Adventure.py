@@ -19,7 +19,9 @@ class Adventure(commands.Cog):
             location_info = get_location_information(get_user_location_id(ctx.author.id))
             print(location_info[2])
             gold = random.randint(location_info[3],location_info[4])
+            exp = random.randint(location_info[5], location_info[6])
             print(gold)
+            print(exp)
         except Exception as e:
             print(e)
 
