@@ -11,7 +11,6 @@ class Events(commands.Cog):
     # on ready
     @commands.Cog.listener()
     async def on_ready(self):
-        print("-" * 14)
         print("[Phaslith] client is online")
         await self.client.change_presence(status=discord.Status.dnd, activity=discord.Game('Testing'))
 

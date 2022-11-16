@@ -20,10 +20,12 @@ async def load_cogs():
     for i in cogs:
         try:
             await client.load_extension(i) # load each cog in cogs list
+            print("[Phaslith] " + i + " loaded")
             cogs_loaded += 1
         except Exception as e:
             print(f"[Phaslith] {e}\n Problem loading '{i}'") # Uh Oh! Error
 
+    print("--" * 20)
     print(f"[Phaslith] I have loaded {cogs_loaded} cog/s")
 
 #;- main
