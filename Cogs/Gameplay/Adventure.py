@@ -1,3 +1,4 @@
+import asyncio
 import random
 
 import discord
@@ -12,21 +13,24 @@ class Adventure(commands.Cog):
     def __init__(self, client):
         self.client = client
 
-    @commands.command(aliases=["walk"])
+    @commands.command(aliases=["walk", "adventure"])
     @commands.has_role("Player")
     async def step(self, ctx):
         user_id = ctx.author.id
+        avatar = ctx.author.display_avatar
+        location_info = get_location_information(get_user_location_id(user_id))
+        gold = random.randint(location_info[3], location_info[4])
+        exp = random.randint(location_info[5], location_info[6])
+        add_wallet_bal(user_id, gold)
+        add_exp(user_id, exp)
         try:
-            location_info = get_location_information(get_user_location_id(user_id))
-            user_wallet = get_user_wallet(user_id)
-            user_exp = get_user_exp(user_id)
-            gold = random.randint(location_info[3],location_info[4])
-            exp = random.randint(location_info[5], location_info[6])
-            add_wallet_bal(user_id, gold)
-            add_exp(user_id, exp)
-            await ctx.reply(f"[debug] +${gold}, +{exp}xp")
+            step_embed = discord.Embed(title=f"[debug] Adventure", description="You take a step forward",color=discord.Color.random())
+            step_embed.add_field(name="Rewards", value=f"+${gold}\n+{exp}xp", inline=True)
+            await ctx.reply(embed=step_embed, delete_after=3.0)
+            await asyncio.sleep(5.0)
+            await ctx.message.delete()
         except Exception as e:
-            print("[Phaslith] " + e)
+            print("[Phaslith] " + str(e))
 
     @step.error
     async def step_error(self, error, ctx):
