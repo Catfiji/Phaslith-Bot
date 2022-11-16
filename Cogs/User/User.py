@@ -2,6 +2,7 @@ import asyncio
 
 from discord.ext import commands
 import discord
+from discord.ext.commands import MissingRole
 from Cogs.User.SetupFunctions import setup_player
 from Cogs.Currency.CurrencyFunctions.currency_functions import get_user_wallet, get_user_bank
 #;---------------------------------------------------------------------------
@@ -38,6 +39,11 @@ class User(commands.Cog):
         await ctx.send(embed=profile_embed, delete_after=10.0)
         await asyncio.sleep(5.0)
         await ctx.message.delete()
+
+    @profile.error
+    async def profile_error(self, error, ctx):
+        if isinstance(error, MissingRole):
+            await ctx.send("do !setup to setup your profile!", delete_after=3.0)
 
 #;---------------------------------------------------------------------------
 async def setup(client):
