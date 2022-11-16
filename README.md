@@ -8,6 +8,8 @@
 <h3>a Discord.Py MMORPG bot</h3>
 </div>
 
+This bot is in early alpha expect alot of stuff not good yes.
+
 ### Information
 
 Read the [Documentation](DOCS.md) to use this bot!
