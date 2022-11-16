@@ -2,6 +2,8 @@
 import Cogs.Functions.database as db
 
 #;---------------------------------------------------------------------------
+
+#;- Get the ID of the players location
 def get_user_location_id(user_id):
     db.cursor.execute(f"SELECT LOCATION_ID from users where ID = {user_id}")
     rows = db.cursor.fetchall()
@@ -9,6 +11,7 @@ def get_user_location_id(user_id):
         user_location = int(row["LOCATION_ID"])
         return user_location
 
+#;- Get Information of a location
 def get_location_information(location_id):
     db.cursor.execute(f"SELECT * from locations where ID = {location_id}")
     rows = db.cursor.fetchall()
