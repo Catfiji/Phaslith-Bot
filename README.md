@@ -10,7 +10,7 @@
 
 ### Information
 
-Read the [Documentation](DOCS.md) to use this bot!
+if you want to make your own verion -> [Documentation](DOCS.md) may help
 
 Players may be interested in the [Game Wiki](GameWiki.md) section :3
 
