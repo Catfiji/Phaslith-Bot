@@ -1,5 +1,5 @@
 
-
+#;---------------------------------------------------------------------------
 
 class Location:
     def __init__(self, name, LVLREQ, MonsterChance, GoldRange):
@@ -7,4 +7,5 @@ class Location:
         self.LevelRequirement = LVLREQ
         self.MonsterChance = MonsterChance
         self.GoldRange = GoldRange
-    
+
+#;---------------------------------------------------------------------------

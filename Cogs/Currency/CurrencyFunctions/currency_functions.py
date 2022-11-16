@@ -1,5 +1,5 @@
 import Cogs.Functions.database as db
-
+#;---------------------------------------------------------------------------
     # GETTERS AND SETTERS
 
 # Get User Balance
@@ -65,3 +65,5 @@ def withdrawl(user_id, amount):
         return True
     else:
         return False
+
+#;---------------------------------------------------------------------------

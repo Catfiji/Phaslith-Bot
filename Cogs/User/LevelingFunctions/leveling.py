@@ -1,6 +1,6 @@
 import Cogs.Functions.database as db
 from math import *
-
+#;---------------------------------------------------------------------------
     # GETTERS AND SETTERS
 
 # Get user level
@@ -59,3 +59,5 @@ def level_up(user_id):
         return True
     else:
         return False
+
+#;---------------------------------------------------------------------------

@@ -1,7 +1,7 @@
 
 import Cogs.Functions.database as db
 
-
+#;---------------------------------------------------------------------------
 def get_user_location_id(user_id):
     db.cursor.execute(f"SELECT LOCATION_ID from users where ID = {user_id}")
     rows = db.cursor.fetchall()
@@ -20,3 +20,5 @@ def get_location_information(location_id):
         location_maxgold = int(row["MAXGOLD"])
         location_info = [location_id, location_name, location_mchance, location_mingold, location_maxgold]
         return location_info
+
+#;---------------------------------------------------------------------------

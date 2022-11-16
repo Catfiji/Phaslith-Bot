@@ -28,5 +28,6 @@ class Adventure(commands.Cog):
         if isinstance(error, MissingRole):
             await ctx.send("you need to setup your profile!", delete_after=3.0)
 
+#;---------------------------------------------------------------------------
 async def setup(client):
     await client.add_cog(Adventure(client))
