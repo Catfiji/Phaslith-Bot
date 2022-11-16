@@ -14,7 +14,8 @@ async def load_cogs():
         "Cogs.Admin.Admin",
         "Cogs.User.User",
         "Cogs.Currency.Currency",
-        "Cogs.Events.Events"
+        "Cogs.Events.Events",
+        "Cogs.Gameplay.Adventure"
     ]
     for i in cogs:
         try:
