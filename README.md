@@ -1,4 +1,5 @@
-# Phaslith Bot v0.5a
+# Phaslith Bot
+A discord.py mmorpg bot
 
-## Rpg bot with lots of functionality
+
 
