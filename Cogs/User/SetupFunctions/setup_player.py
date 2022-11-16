@@ -25,14 +25,17 @@ default_enchant_xp = 0
 default_wood_lvl = 1
 default_wood_xp = 0
 
+defualt_location_id = 1
+
 def setup_player(user_id):
-    users_data_a = """INSERT INTO users (ID, LEVEL, EXP, WALLET, BANK) VALUES (%s, %s, %s, %s, %s)"""
+    users_data_a = """INSERT INTO users (ID, LEVEL, EXP, WALLET, BANK, LOCATION_ID) VALUES (%s, %s, %s, %s, %s, %s)"""
     users_data_a_val = (
         user_id,
         default_level,
         default_xp,
         default_wallet,
         default_bank,
+        defualt_location_id
     )
 
     users_data_b = "INSERT INTO usersskills (ID, STRENGTH, AGILITY, DEFENSE, MINING_LEVEL, MINING_XP, FISHING_LEVEL, FISHING_XP, FARMING_LEVEL, FARMING_XP, COOKING_LEVEL, COOKING_XP, BLACKSMITHING_LEVEL, BLACKSMITHING_XP, ENCHANTING_LEVEL, ENCHANTING_XP, WOODCUTTING_LEVEL, WOODCUTTING_XP) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
