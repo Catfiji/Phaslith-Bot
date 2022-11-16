@@ -26,7 +26,7 @@ class Adventure(commands.Cog):
     @step.error
     async def step_error(self, error, ctx):
         if isinstance(error, MissingRole):
-            await ctx.send("do !setup to setup your profile!", delete_after=3.0)
+            await ctx.send("you need to setup your profile!", delete_after=3.0)
 
 async def setup(client):
     await client.add_cog(Adventure(client))
