@@ -28,10 +28,17 @@ def get_user_exp(user_id):
 
 # Add user XP
 def add_exp(user_id, amount):
-    amount = int(amount)
-    sql = f"UPDATE users SET EXP = {get_user_exp(user_id) + amount} WHERE ID = {user_id}"
-    db.cursor.execute(sql)
-    db.data.commit()
+    if get_exp_required(user_id) + amount <= get_user_exp(user_id):
+        amount = int(amount)
+        sql = f"UPDATE users SET EXP = {get_user_exp(user_id) + amount} WHERE ID = {user_id}"
+        db.cursor.execute(sql)
+        db.data.commit()
+        level_up(user_id)
+    else:
+        amount = int(amount)
+        sql = f"UPDATE users SET EXP = {get_user_exp(user_id) + amount} WHERE ID = {user_id}"
+        db.cursor.execute(sql)
+        db.data.commit()
 
 # Remove user XP
 def remove_exp(user_id, amount):

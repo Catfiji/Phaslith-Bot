@@ -18,7 +18,9 @@ def get_location_information(location_id):
         location_mchance = int(row["MONSTERCHANCE"])
         location_mingold = int(row["MINGOLD"])
         location_maxgold = int(row["MAXGOLD"])
-        location_info = [location_id, location_name, location_mchance, location_mingold, location_maxgold]
+        location_minxp = int(row["MINEXP"])
+        location_maxxp = int(row["MAXEXP"])
+        location_info = [location_id, location_name, location_mchance, location_mingold, location_maxgold, location_minxp, location_maxxp]
         return location_info
 
 #;---------------------------------------------------------------------------
