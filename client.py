@@ -22,9 +22,9 @@ async def load_cogs():
             await client.load_extension(i) # load each cog in cogs list
             cogs_loaded += 1
         except Exception as e:
-            print(f"{e}\n Problem loading '{i}'") # Uh Oh! Error
+            print(f"[Phaslith] {e}\n Problem loading '{i}'") # Uh Oh! Error
 
-    print(f"I have loaded {cogs_loaded} cog/s")
+    print(f"[Phaslith] I have loaded {cogs_loaded} cog/s")
 
 #;- main
 async def main():

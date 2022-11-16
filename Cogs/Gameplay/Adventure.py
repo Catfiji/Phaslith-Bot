@@ -26,7 +26,7 @@ class Adventure(commands.Cog):
             add_exp(user_id, exp)
             await ctx.reply(f"[debug] +${gold}, +{exp}xp")
         except Exception as e:
-            print(e)
+            print("[Phaslith] " + e)
 
     @step.error
     async def step_error(self, error, ctx):
