@@ -10,7 +10,7 @@
 
 ### Information
 
-Read the ~~[Documentation](DOCS.md)~~ to use this bot! *NOT MADE YET*
+Read the [Documentation](DOCS.md) to use this bot!
 
 Read the [Changelog](CHANGELOG.md) for information on updates 
 
