@@ -14,7 +14,7 @@ Read the [Documentation](DOCS.md) to use this bot!
 
 Players may be interested in the [Game Wiki](GameWiki.md) section :3
 
-Read the [Changelog](CHANGELOG.md) for information on updates
+Read the [Changelog](CHANGELOG.md) for information on updates *not that useful to be fair*
 
 !This bot is in early-early-early development expect alot of stuff not good yes!
 
