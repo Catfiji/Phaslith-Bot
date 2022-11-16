@@ -8,8 +8,6 @@
 <h3>a Discord.Py MMORPG bot</h3>
 </div>
 
-This bot is in early alpha expect alot of stuff not good yes.
-
 ### Information
 
 Read the [Documentation](DOCS.md) to use this bot!
@@ -17,5 +15,7 @@ Read the [Documentation](DOCS.md) to use this bot!
 Players may be interested in the [Game Wiki](GameWiki.md) section :3
 
 Read the [Changelog](CHANGELOG.md) for information on updates
+
+!This bot is in early-early-early development expect alot of stuff not good yes!
 
 
