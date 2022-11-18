@@ -3,7 +3,7 @@ from Cogs.Functions.database import *
 
 #;- Get user inventory
 def get_user_inventory(user_id):
-    cursor.execute(f"SELECT INVENTORY from testing where ID = {user_id}")
+    cursor.execute(f"SELECT INVENTORY from userinventory where ID = {user_id}")
     rows = cursor.fetchall()
     for row in rows:
         user_inv = row["INVENTORY"]
@@ -33,7 +33,7 @@ def add_item(user_id, item, amount):
     else:
         user_inv[item] = amount
 
-    sql = f'UPDATE `testing` SET `INVENTORY` = (%s) WHERE `ID` = (%s)'
+    sql = f'UPDATE `userinventory` SET `INVENTORY` = (%s) WHERE `ID` = (%s)'
     val = (json.dumps(user_inv), user_id)
     cursor.execute(sql,val)
     data.commit()
@@ -45,7 +45,7 @@ def remove_item(user_id, item, amount):
     if check_item(user_inv, item):
         user_inv[item] -= amount
 
-    sql = f'UPDATE `testing` SET `INVENTORY` = (%s) WHERE `ID` = (%s)'
+    sql = f'UPDATE `userinventory` SET `INVENTORY` = (%s) WHERE `ID` = (%s)'
     val = (json.dumps(user_inv), user_id)
     cursor.execute(sql, val)
     data.commit()
@@ -57,7 +57,7 @@ def delete_item(user_id, item):
     if check_item(user_inv, item):
         del user_inv[item]
 
-    sql = f'UPDATE `testing` SET `INVENTORY` = (%s) WHERE `ID` = (%s)'
+    sql = f'UPDATE `userinventory` SET `INVENTORY` = (%s) WHERE `ID` = (%s)'
     val = (json.dumps(user_inv), user_id)
     cursor.execute(sql, val)
     data.commit()

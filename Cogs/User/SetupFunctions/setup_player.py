@@ -1,3 +1,5 @@
+import json
+
 from Cogs.Functions import database as db
 
 default_level = 1
@@ -65,14 +67,24 @@ def setup_player(user_id):
         user_id,
         default_steps
     )
+
+    users_data_d = "INSERT INTO userinventory (ID, INVENTORY) VALUE (%s, %s)"
+    users_data_d_val = (user_id, json.dumps({}))
+
     try:
         db.cursor.execute(users_data_a, users_data_a_val)
         db.data.commit()
         db.cursor.reset()
+
         db.cursor.execute(users_data_b, users_data_b_val)
         db.data.commit()
         db.cursor.reset()
+
         db.cursor.execute(users_data_c, users_data_c_val)
+        db.data.commit()
+        db.cursor.reset()
+
+        db.cursor.execute(users_data_d, users_data_d_val)
         db.data.commit()
         db.cursor.reset()
     except Exception as e:
