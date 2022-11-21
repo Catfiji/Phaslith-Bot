@@ -20,5 +20,7 @@ Read the [Changelog](CHANGELOG.md) for information on updates *not that useful t
 
 
 
- - *Cathonia* links:  [Github](https://github.com/Catfiji) ~*Discord* "♡ Kitty ♡#1014"
+ - **My links** links:  
+    - [Github](https://github.com/Catfiji) 
+    - Discord "♡ Kitty ♡#1014"
 
