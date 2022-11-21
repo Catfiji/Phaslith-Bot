@@ -28,4 +28,4 @@ git clone https://github.com/Catfiji/Phaslith-Bot.git
 Any contribution is welcome!! 
 
 # Authors
-[Cathonia](https://github.com/Catfiji)
+[CatFiji](https://github.com/Catfiji)
