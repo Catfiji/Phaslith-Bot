@@ -19,3 +19,7 @@ Read the [Changelog](CHANGELOG.md) for information on updates *not that useful t
 !This bot is in early-early-early development expect alot of stuff not good yes!
 
 
+
+credits:
+Programming: Cathonia  [Github](https://github.com/Catfiji) Discord: ♡ Kitty ♡#1014
+
