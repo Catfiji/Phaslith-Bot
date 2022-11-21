@@ -21,5 +21,5 @@ Read the [Changelog](CHANGELOG.md) for information on updates *not that useful t
 
 
 credits:
-Programming: Cathonia  [Github](https://github.com/Catfiji) Discord: ♡ Kitty ♡#1014
+Programming: Cathonia  [Github](https://github.com/Catfiji) Discord: "♡ Kitty ♡#1014"
 
